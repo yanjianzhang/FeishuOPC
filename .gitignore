@@ -1,0 +1,67 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Linter
+.ruff_cache/
+
+# Environment & secrets
+.env
+*.pem
+
+# .larkagent/secrets — default-deny everything, then explicitly whitelist
+# only example / template / README files. Adding a NEW secret file (new
+# bot, new credential set, new key type) never accidentally leaks: git
+# never tracks anything inside secrets/ unless it matches a whitelist.
+.larkagent/secrets/**
+!.larkagent/secrets/
+!.larkagent/secrets/**/
+!.larkagent/secrets/**/*.example.*
+!.larkagent/secrets/**/*.example
+!.larkagent/secrets/**/README*
+!.larkagent/secrets/**/.gitkeep
+
+# Runtime data (includes data/techbot-runs/ audit logs, data/code-writes/ code-change audit JSONL)
+data/
+*.db
+
+# 004 — per-dispatch git worktrees (isolation for code-writing roles)
+.worktrees/
+
+# Runtime trace output from role agents (not code — should not be committed)
+agent/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Internal development docs & BMAD / Specify — not published with OSS code
+# (directories stay on your machine; they are omitted from git and public remotes.)
+specs/
+docs/
+_bmad/
+.specify/
+.claude/
+.cursor/

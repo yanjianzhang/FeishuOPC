@@ -1,0 +1,59 @@
+{
+  "project_id": "exampleapp",
+  "project_type": "bmad-story-tracker",
+  "display_name": "ExampleApp",
+  "source_roots": {
+    "specs_dir": "project_knowledge/specs",
+    "artifact_dir": "project_knowledge/_bmad-output/implementation-artifacts",
+    "status_file": "project_knowledge/_bmad-output/implementation-artifacts/sprint-status.yaml"
+  },
+  "status_priority": [
+    "status_file",
+    "artifact_file",
+    "spec_file"
+  ],
+  "record_key": {
+    "strategy": "yaml-key",
+    "prefix": "exampleapp"
+  },
+  "status_mapping": {
+    "backlog": "planned",
+    "ready-for-dev": "planned",
+    "planned": "planned",
+    "in-progress": "in-progress",
+    "review": "review",
+    "done": "done"
+  },
+  "module_mapping": {
+    "vineyard_module": "vineyard_module",
+    "current_sprint": "current_sprint",
+    "development_status": "development_status",
+    "project_summary": "project_summary"
+  },
+  "record_defaults": {
+    "record_type": "story",
+    "owner": "",
+    "risk": ""
+  },
+  "default_filters": {
+    "exclude_status": [
+      "unknown"
+    ]
+  },
+  "field_mapping": {
+    "external_key": "ExternalKey",
+    "status": "进展",
+    "title": "任务描述",
+    "summary": "任务情况总结",
+    "owner": "任务执行人"
+  },
+  "field_value_mapping": {
+    "status": {
+      "planned": "待开始",
+      "in-progress": "进行中",
+      "review": "进行中",
+      "done": "已完成",
+      "unknown": "已停滞"
+    }
+  }
+}

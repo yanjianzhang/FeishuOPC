@@ -1,0 +1,21 @@
+[Unit]
+Description=FeishuOPC OAuth callback microservice (impersonation token minter)
+After=network.target
+
+[Service]
+Type=simple
+User=__USER__
+WorkingDirectory=__REMOTE_DIR__
+Environment=PYTHONPATH=__REMOTE_DIR__
+Environment=APP_REPO_ROOT=__SHARED_RES_DIR__
+Environment=OAUTH_CALLBACK_PUBLIC_URL=__PUBLIC_REDIRECT__
+Environment=SECRET_KEY=agent-only
+Environment=DEBUG=false
+ExecStart=__VENV_DIR__/bin/python -m uvicorn feishu_agent.oauth_callback_main:app --host 127.0.0.1 --port __PORT__
+Restart=always
+RestartSec=5
+StandardOutput=append:__LOG_DIR__/oauth-callback.log
+StandardError=append:__LOG_DIR__/oauth-callback.log
+
+[Install]
+WantedBy=multi-user.target

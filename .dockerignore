@@ -1,0 +1,31 @@
+# Docker build context exclusions.
+# Keep in sync with .gitignore for anything that should not leak into images.
+
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+.venv/
+venv/
+env/
+
+# Feature 004 — per-dispatch git worktrees (never part of the image).
+.worktrees/
+
+# Runtime data & logs.
+data/
+*.db
+
+# Secrets and local agent state — never bundled into images.
+.larkagent/secrets/
+!.larkagent/secrets/**/.gitkeep
+
+# Local tooling caches and editor state.
+.git/
+.github/
+.vscode/
+.idea/
+.DS_Store

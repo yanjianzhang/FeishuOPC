@@ -1,0 +1,48 @@
+{
+  "t001_connect_execute": {
+    "passed": true,
+    "agent_type": "Agent",
+    "content": "Mock response for turn 1"
+  },
+  "t002_policy": {
+    "passed": true,
+    "set_policy_works": true,
+    "allow_tools_works": true,
+    "deny_tools_works": true
+  },
+  "t002_supervisor": {
+    "passed": true,
+    "delegations": [
+      "spike-worker-planner"
+    ]
+  },
+  "t003_lifecycle": {
+    "passed": true,
+    "result_type": "ExecutionResult",
+    "latency_ms": 0,
+    "token_total": 0
+  },
+  "t003_conversation": {
+    "passed": true,
+    "history_works": true,
+    "history_count": 0,
+    "memory_retained": false
+  },
+  "t004_gateway": {
+    "passed": true,
+    "recommendation": "docker_server_for_prod_mock_for_tests"
+  },
+  "t005_mcp_bridge": {
+    "passed": true,
+    "format": "mcp_bridge_required",
+    "mcp_methods": [
+      "add_mcp_server",
+      "remove_mcp_server"
+    ],
+    "tool_policy_methods": [
+      "set_tool_policy",
+      "allow_tools",
+      "deny_tools"
+    ]
+  }
+}
